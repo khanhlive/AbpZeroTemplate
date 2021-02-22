@@ -4,6 +4,9 @@
     {
         public static class Common
         {
+            public const string MedicalSpecialties = "Models.MedicalSpecialties";
+            public const string Icd10s = "Models.Icd10s";
+            public const string Constants = "Models.Constants";
             public const string Gender = "Administration.Models.Gender";
             public const string MedicinalTypes = "Administration.Models.MedicinalTypes";
             public const string Ethnicities = "Administration.Models.Ethnicities";

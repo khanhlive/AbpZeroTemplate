@@ -1,0 +1,61 @@
+﻿
+@using System.Globalization
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.Icd10s
+@model CreateOrEditIcd10ModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditIcd10")) : L("CreateNewIcd10")))
+
+<div class="modal-body">
+        <div id="Icd10InformationsTab">
+            <form name="Icd10InformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.Icd10.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="Icd10_Code">@L("Code")</label>
+									<input class="form-control" id="Icd10_Code" value="@Model.Icd10.Code" type="text" name="code"  required  maxlength="@Hitechsoft.CRM.Models.Icd10Consts.MaxCodeLength"  minlength="@Hitechsoft.CRM.Models.Icd10Consts.MinCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Icd10_Name">@L("Name")</label>
+									<input class="form-control" id="Icd10_Name" value="@Model.Icd10.Name" type="text" name="name"  required  maxlength="@Hitechsoft.CRM.Models.Icd10Consts.MaxNameLength"  minlength="@Hitechsoft.CRM.Models.Icd10Consts.MinNameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Icd10_DiseaseChapterCode">@L("DiseaseChapterCode")</label>
+									<input class="form-control" id="Icd10_DiseaseChapterCode" value="@Model.Icd10.DiseaseChapterCode" type="text" name="diseaseChapterCode"   maxlength="@Hitechsoft.CRM.Models.Icd10Consts.MaxDiseaseChapterCodeLength"  minlength="@Hitechsoft.CRM.Models.Icd10Consts.MinDiseaseChapterCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Icd10_DiseaseChapterName">@L("DiseaseChapterName")</label>
+									<input class="form-control" id="Icd10_DiseaseChapterName" value="@Model.Icd10.DiseaseChapterName" type="text" name="diseaseChapterName"   maxlength="@Hitechsoft.CRM.Models.Icd10Consts.MaxDiseaseChapterNameLength"  minlength="@Hitechsoft.CRM.Models.Icd10Consts.MinDiseaseChapterNameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Icd10_WHOeName">@L("WHOeName")</label>
+									<input class="form-control" id="Icd10_WHOeName" value="@Model.Icd10.WHOeName" type="text" name="whOeName"   maxlength="@Hitechsoft.CRM.Models.Icd10Consts.MaxWHOeNameLength"  minlength="@Hitechsoft.CRM.Models.Icd10Consts.MinWHOeNameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Icd10_WHOName">@L("WHOName")</label>
+									<input class="form-control" id="Icd10_WHOName" value="@Model.Icd10.WHOName" type="text" name="whoName"   maxlength="@Hitechsoft.CRM.Models.Icd10Consts.MaxWHONameLength"  minlength="@Hitechsoft.CRM.Models.Icd10Consts.MinWHONameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Icd10_Status">@L("Status")</label>
+									<input class="form-control m-input" id="Icd10_Status" value="@Model.Icd10.Status.ToString(CultureInfo.InvariantCulture)" type="number" name="status"  />
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

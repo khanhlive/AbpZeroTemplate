@@ -30,6 +30,21 @@ namespace Hitechsoft.CRM.Authorization
 
             var pages = context.GetPermissionOrNull(AppPermissions.Pages) ?? context.CreatePermission(AppPermissions.Pages, L("Pages"));
 
+            var medicalSpecialties = pages.CreateChildPermission(AppPermissions.Pages_MedicalSpecialties, L("MedicalSpecialties"));
+            medicalSpecialties.CreateChildPermission(AppPermissions.Pages_MedicalSpecialties_Create, L("CreateNewMedicalSpecialty"));
+            medicalSpecialties.CreateChildPermission(AppPermissions.Pages_MedicalSpecialties_Edit, L("EditMedicalSpecialty"));
+            medicalSpecialties.CreateChildPermission(AppPermissions.Pages_MedicalSpecialties_Delete, L("DeleteMedicalSpecialty"));
+
+            var icd10s = pages.CreateChildPermission(AppPermissions.Pages_Icd10s, L("Icd10s"));
+            icd10s.CreateChildPermission(AppPermissions.Pages_Icd10s_Create, L("CreateNewIcd10"));
+            icd10s.CreateChildPermission(AppPermissions.Pages_Icd10s_Edit, L("EditIcd10"));
+            icd10s.CreateChildPermission(AppPermissions.Pages_Icd10s_Delete, L("DeleteIcd10"));
+
+            var constants = pages.CreateChildPermission(AppPermissions.Pages_Constants, L("Constants"));
+            constants.CreateChildPermission(AppPermissions.Pages_Constants_Create, L("CreateNewConstant"));
+            constants.CreateChildPermission(AppPermissions.Pages_Constants_Edit, L("EditConstant"));
+            constants.CreateChildPermission(AppPermissions.Pages_Constants_Delete, L("DeleteConstant"));
+
             var gender = pages.CreateChildPermission(AppPermissions.Pages_Administration_Gender, L("Gender"));
             gender.CreateChildPermission(AppPermissions.Pages_Administration_Gender_Create, L("CreateNewGender"));
             gender.CreateChildPermission(AppPermissions.Pages_Administration_Gender_Edit, L("EditGender"));

@@ -1,23 +1,23 @@
 ﻿@using Hitechsoft.CRM.Authorization
-@using Hitechsoft.CRM.Web.Areas.App.Models.Ethnicities
+@using Hitechsoft.CRM.Web.Areas.App.Models.Constants
 @using Hitechsoft.CRM.Web.Areas.App.Startup
-@model EthnicitiesViewModel
+@model ConstantsViewModel
 @{
-    ViewBag.CurrentPageName = AppPageNames.Common.Ethnicities;
+    ViewBag.CurrentPageName = AppPageNames.Common.Constants;
 }
 @section Scripts
 {
-    <script abp-src="/view-resources/Areas/App/Views/Ethnicities/Index.js" asp-append-version="true"></script>
+    <script abp-src="/view-resources/Areas/App/Views/Constants/Index.js" asp-append-version="true"></script>
 }
 
 <div class="content d-flex flex-column flex-column-fluid">
 
-    <abp-page-subheader title="@L("Ethnicities")" description="@L("EthnicitiesHeaderInfo")">
+    <abp-page-subheader title="@L("Constants")" description="@L("ConstantsHeaderInfo")">
         <button id="ExportToExcelButton" class="btn btn-sm btn-outline-success"><i class="fa fa-file-excel"></i> @L("ExportToExcel")</button>
 
-        @if (IsGranted(AppPermissions.Pages_Administration_Ethnicities_Create))
+        @if (IsGranted(AppPermissions.Pages_Constants_Create))
         {
-            <button id="CreateNewEthnicityButton" class="btn btn-sm btn-primary blue"><i class="fa fa-plus"></i> @L("CreateNewEthnicity")</button>
+            <button id="CreateNewConstantButton" class="btn btn-primary blue btn-sm"><i class="fa fa-plus"></i> @L("CreateNewConstant")</button>
         }
     </abp-page-subheader>
 
@@ -29,9 +29,9 @@
                         <div class="col-xl-12">
                             <div class="form-group align-items-center">
                                 <div class="input-group">
-                                    <input type="text" id="EthnicitiesTableFilter" class="form-control m-input" placeholder="@L("SearchWithThreeDot")" value="@Model.FilterText">
+                                    <input type="text" id="ConstantsTableFilter" class="form-control m-input" placeholder="@L("SearchWithThreeDot")" value="@Model.FilterText">
                                     <span class="input-group-btn">
-                                        <button id="GetEthnicitiesButton" class="btn btn-primary" type="submit"><i class="flaticon-search-1"></i></button>
+                                        <button id="GetConstantsButton" class="btn btn-primary" type="submit"><i class="flaticon-search-1"></i></button>
                                     </span>
                                 </div>
                             </div>
@@ -63,20 +63,12 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="MinStatusFilterId">@L("MinMax") @L("Status")</label>
+                            <label for="MinTypeFilterId">@L("MinMax") @L("Type")</label>
                             <div class="input-group">
-                                <input type="number" class="form-control m-input" placeholder="@L("MinValue")" name="minStatusFilter" id="MinStatusFilterId" />
-                                <input type="number" class="form-control m-input" placeholder="@L("MaxValue")" name="maxStatusFilter" id="MaxStatusFilterId" />
+                                <input type="number" class="form-control m-input" placeholder="@L("MinValue")" name="minTypeFilter" id="MinTypeFilterId" />
+                                <input type="number" class="form-control m-input" placeholder="@L("MaxValue")" name="maxTypeFilter" id="MaxTypeFilterId" />
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="IsDeletedFilterId">@L("IsDeleted")</label>
-                        <select class="form-control" name="IsDeletedFilter" id="IsDeletedFilterId">
-                            <option value="-1">@L("All")</option>
-                            <option value="0">@L("False")</option>
-                            <option value="1">@L("True")</option>
-                        </select>
                     </div>
                 </div>
                 <div class="row mb-4">
@@ -86,15 +78,17 @@
                     </div>
                 </div>
                 <div class="row align-items-center">
-                    <table id="EthnicitiesTable" class="display table table-striped table-bordered table-hover dt-responsive nowrap">
+                    <table id="ConstantsTable" class="display table table-striped table-bordered table-hover dt-responsive nowrap">
                         <thead>
                             <tr>
+                                <th></th>
+
                                 <th>@L("Actions")</th>
                                 <th>@L("Code")</th>
                                 <th>@L("Name")</th>
                                 <th>@L("Description")</th>
-                                <th>@L("Status")</th>
-                                <th>@L("IsDeleted")</th>
+                                <th>@L("Type")</th>
+
                             </tr>
                         </thead>
                     </table>

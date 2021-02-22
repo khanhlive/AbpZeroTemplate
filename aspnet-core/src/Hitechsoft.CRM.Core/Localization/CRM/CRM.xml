@@ -1,6 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
-  <texts>
+  <texts>    <text name="MedicalSpecialty">Medical specialty</text>
+    <text name="Hitechsoft.CRM.Models.MedicalSpecialty">MedicalSpecialty</text>
+    <text name="Fullname">Fullname</text>
+    <text name="DecisionCode">Decision code</text>
+    <text name="MedicalSpecialtiesHeaderInfo">Medical specialties header info</text>
+    <text name="CreateNewMedicalSpecialty">Create new medical specialty</text>
+    <text name="EditMedicalSpecialty">Edit medical specialty</text>
+    <text name="DeleteMedicalSpecialty">Delete medical specialty</text>
+    <text name="MedicalSpecialties">Medical specialties</text>
+    <text name="Icd10">Icd 1 0</text>
+    <text name="Hitechsoft.CRM.Models.Icd10">Icd10</text>
+    <text name="DiseaseChapterCode">Disease chapter code</text>
+    <text name="DiseaseChapterName">Disease chapter name</text>
+    <text name="WHOeName">W h oe name</text>
+    <text name="WHOName">W h o name</text>
+    <text name="Icd10sHeaderInfo">Icd 1 0s header info</text>
+    <text name="CreateNewIcd10">Create new icd 1 0</text>
+    <text name="EditIcd10">Edit icd 1 0</text>
+    <text name="DeleteIcd10">Delete icd 1 0</text>
+    <text name="Icd10s">Icd 1 0s</text>
+    <text name="Constant">Constant</text>
+    <text name="Hitechsoft.CRM.Models.Constant">Constant</text>
+    <text name="Type">Type</text>
+    <text name="ConstantsHeaderInfo">Constants header info</text>
+    <text name="CreateNewConstant">Create new constant</text>
+    <text name="EditConstant">Edit constant</text>
+    <text name="DeleteConstant">Delete constant</text>
+    <text name="Constants">Constants</text>
+
     <text name="Gender">Gender</text>
     <text name="Hitechsoft.CRM.Models.Gender">Gender</text>
     <text name="GenderHeaderInfo">Gender header info</text>

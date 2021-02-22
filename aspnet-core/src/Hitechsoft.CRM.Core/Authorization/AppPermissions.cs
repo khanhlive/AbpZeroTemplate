@@ -6,6 +6,21 @@
     /// </summary>
     public static class AppPermissions
     {
+        public const string Pages_MedicalSpecialties = "Pages.MedicalSpecialties";
+        public const string Pages_MedicalSpecialties_Create = "Pages.MedicalSpecialties.Create";
+        public const string Pages_MedicalSpecialties_Edit = "Pages.MedicalSpecialties.Edit";
+        public const string Pages_MedicalSpecialties_Delete = "Pages.MedicalSpecialties.Delete";
+
+        public const string Pages_Icd10s = "Pages.Icd10s";
+        public const string Pages_Icd10s_Create = "Pages.Icd10s.Create";
+        public const string Pages_Icd10s_Edit = "Pages.Icd10s.Edit";
+        public const string Pages_Icd10s_Delete = "Pages.Icd10s.Delete";
+
+        public const string Pages_Constants = "Pages.Constants";
+        public const string Pages_Constants_Create = "Pages.Constants.Create";
+        public const string Pages_Constants_Edit = "Pages.Constants.Edit";
+        public const string Pages_Constants_Delete = "Pages.Constants.Delete";
+
         public const string Pages_Administration_Gender = "Pages.Administration.Gender";
         public const string Pages_Administration_Gender_Create = "Pages.Administration.Gender.Create";
         public const string Pages_Administration_Gender_Edit = "Pages.Administration.Gender.Edit";

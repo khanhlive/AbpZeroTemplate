@@ -1,0 +1,51 @@
+﻿
+@using System.Globalization
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.MedicalSpecialties
+@model CreateOrEditMedicalSpecialtyModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditMedicalSpecialty")) : L("CreateNewMedicalSpecialty")))
+
+<div class="modal-body">
+        <div id="MedicalSpecialtyInformationsTab">
+            <form name="MedicalSpecialtyInformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.MedicalSpecialty.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="MedicalSpecialty_Code">@L("Code")</label>
+									<input class="form-control" id="MedicalSpecialty_Code" value="@Model.MedicalSpecialty.Code" type="text" name="code"  required  maxlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MaxCodeLength"  minlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MinCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicalSpecialty_Name">@L("Name")</label>
+									<input class="form-control" id="MedicalSpecialty_Name" value="@Model.MedicalSpecialty.Name" type="text" name="name"  required  maxlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MaxNameLength"  minlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MinNameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicalSpecialty_Fullname">@L("Fullname")</label>
+									<input class="form-control" id="MedicalSpecialty_Fullname" value="@Model.MedicalSpecialty.Fullname" type="text" name="fullname"   maxlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MaxFullnameLength"  minlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MinFullnameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicalSpecialty_DecisionCode">@L("DecisionCode")</label>
+									<input class="form-control" id="MedicalSpecialty_DecisionCode" value="@Model.MedicalSpecialty.DecisionCode" type="text" name="decisionCode"   maxlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MaxDecisionCodeLength"  minlength="@Hitechsoft.CRM.Models.MedicalSpecialtyConsts.MinDecisionCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicalSpecialty_Status">@L("Status")</label>
+									<input class="form-control m-input" id="MedicalSpecialty_Status" value="@Model.MedicalSpecialty.Status.ToString(CultureInfo.InvariantCulture)" type="number" name="status"  />
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

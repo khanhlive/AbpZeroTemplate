@@ -13,11 +13,11 @@
 <div class="content d-flex flex-column flex-column-fluid">
 
     <abp-page-subheader title="@L("Gender")" description="@L("GenderHeaderInfo")">
-        <button id="ExportToExcelButton" class="btn btn-outline-success"><i class="fa fa-file-excel"></i> @L("ExportToExcel")</button>
+        <button id="ExportToExcelButton" class="btn btn-sm btn-outline-success"><i class="fa fa-file-excel"></i> @L("ExportToExcel")</button>
 
         @if (IsGranted(AppPermissions.Pages_Administration_Gender_Create))
         {
-            <button id="CreateNewGenderButton" class="btn btn-primary blue"><i class="fa fa-plus"></i> @L("CreateNewGender")</button>
+            <button id="CreateNewGenderButton" class="btn btn-sm btn-primary blue"><i class="fa fa-plus"></i> @L("CreateNewGender")</button>
         }
     </abp-page-subheader>
 

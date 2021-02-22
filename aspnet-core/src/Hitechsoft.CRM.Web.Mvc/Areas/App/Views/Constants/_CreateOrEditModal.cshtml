@@ -1,0 +1,46 @@
+﻿
+@using System.Globalization
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.Constants
+@model CreateOrEditConstantModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditConstant")) : L("CreateNewConstant")))
+
+<div class="modal-body">
+        <div id="ConstantInformationsTab">
+            <form name="ConstantInformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.Constant.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="Constant_Code">@L("Code")</label>
+									<input class="form-control" id="Constant_Code" value="@Model.Constant.Code" type="text" name="code"  required  maxlength="@Hitechsoft.CRM.Models.ConstantConsts.MaxCodeLength"  minlength="@Hitechsoft.CRM.Models.ConstantConsts.MinCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Constant_Name">@L("Name")</label>
+									<input class="form-control" id="Constant_Name" value="@Model.Constant.Name" type="text" name="name"  required  maxlength="@Hitechsoft.CRM.Models.ConstantConsts.MaxNameLength"  minlength="@Hitechsoft.CRM.Models.ConstantConsts.MinNameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Constant_Description">@L("Description")</label>
+									<input class="form-control" id="Constant_Description" value="@Model.Constant.Description" type="text" name="description"  required  maxlength="@Hitechsoft.CRM.Models.ConstantConsts.MaxDescriptionLength"  minlength="@Hitechsoft.CRM.Models.ConstantConsts.MinDescriptionLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Constant_Type">@L("Type")</label>
+									<input class="form-control m-input" id="Constant_Type" value="@Model.Constant.Type.ToString(CultureInfo.InvariantCulture)" type="number" name="type"  />
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

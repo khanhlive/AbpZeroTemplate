@@ -1,0 +1,40 @@
+﻿
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.MedicalSpecialties
+@model MedicalSpecialtyViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("Details")))
+
+<div class="modal-body">
+    <div id="MedicalSpecialtyInformationsTab">
+        
+        <div class="row">
+            <div class="col-6 mb-3">
+                <h6>@L("Code") :</h6>
+                @Model.MedicalSpecialty.Code
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Name") :</h6>
+                @Model.MedicalSpecialty.Name
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Fullname") :</h6>
+                @Model.MedicalSpecialty.Fullname
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("DecisionCode") :</h6>
+                @Model.MedicalSpecialty.DecisionCode
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Status") :</h6>
+                @Model.MedicalSpecialty.Status
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithClose.cshtml")
+

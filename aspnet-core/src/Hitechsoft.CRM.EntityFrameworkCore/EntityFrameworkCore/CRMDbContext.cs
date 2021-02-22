@@ -18,6 +18,12 @@ namespace Hitechsoft.CRM.EntityFrameworkCore
 {
     public class CRMDbContext : AbpZeroDbContext<Tenant, Role, User, CRMDbContext>, IAbpPersistedGrantDbContext
     {
+        public virtual DbSet<MedicalSpecialty> MedicalSpecialties { get; set; }
+
+        public virtual DbSet<Icd10> Icd10s { get; set; }
+
+        public virtual DbSet<Constant> Constants { get; set; }
+
         public virtual DbSet<Gender> Gender { get; set; }
 
         public virtual DbSet<MedicinalType> MedicinalTypes { get; set; }
@@ -54,10 +60,22 @@ namespace Hitechsoft.CRM.EntityFrameworkCore
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Gender>(g =>
+            modelBuilder.Entity<MedicalSpecialty>(m =>
             {
-                g.HasIndex(e => new { e.TenantId });
+                m.HasIndex(e => new { e.TenantId });
             });
+            modelBuilder.Entity<Icd10>(i =>
+                       {
+                           i.HasIndex(e => new { e.TenantId });
+                       });
+            modelBuilder.Entity<Constant>(c =>
+                       {
+                           c.HasIndex(e => new { e.TenantId });
+                       });
+            modelBuilder.Entity<Gender>(g =>
+                       {
+                           g.HasIndex(e => new { e.TenantId });
+                       });
             modelBuilder.Entity<MedicinalType>(m =>
                        {
                            m.HasIndex(e => new { e.TenantId });

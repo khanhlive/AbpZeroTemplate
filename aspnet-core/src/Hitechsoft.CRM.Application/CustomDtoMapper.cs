@@ -49,6 +49,12 @@ namespace Hitechsoft.CRM
     {
         public static void CreateMappings(IMapperConfigurationExpression configuration)
         {
+            configuration.CreateMap<CreateOrEditMedicalSpecialtyDto, MedicalSpecialty>().ReverseMap();
+            configuration.CreateMap<MedicalSpecialtyDto, MedicalSpecialty>().ReverseMap();
+            configuration.CreateMap<CreateOrEditIcd10Dto, Icd10>().ReverseMap();
+            configuration.CreateMap<Icd10Dto, Icd10>().ReverseMap();
+            configuration.CreateMap<CreateOrEditConstantDto, Constant>().ReverseMap();
+            configuration.CreateMap<ConstantDto, Constant>().ReverseMap();
             configuration.CreateMap<CreateOrEditGenderDto, Gender>().ReverseMap();
             configuration.CreateMap<GenderDto, Gender>().ReverseMap();
             configuration.CreateMap<CreateOrEditMedicinalTypeDto, MedicinalType>().ReverseMap();

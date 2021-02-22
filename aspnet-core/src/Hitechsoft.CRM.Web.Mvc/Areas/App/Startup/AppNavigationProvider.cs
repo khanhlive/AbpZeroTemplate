@@ -23,6 +23,30 @@ namespace Hitechsoft.CRM.Web.Areas.App.Startup
                     )
                 )
                 .AddItem(new MenuItemDefinition(
+                        AppPageNames.Common.MedicalSpecialties,
+                        L("MedicalSpecialties"),
+                        url: "App/MedicalSpecialties",
+                        icon: "flaticon-more",
+                        permissionDependency: new SimplePermissionDependency(AppPermissions.Pages_MedicalSpecialties)
+                    )
+                )
+                .AddItem(new MenuItemDefinition(
+                        AppPageNames.Common.Icd10s,
+                        L("Icd10s"),
+                        url: "App/Icd10s",
+                        icon: "flaticon-more",
+                        permissionDependency: new SimplePermissionDependency(AppPermissions.Pages_Icd10s)
+                    )
+                )
+                .AddItem(new MenuItemDefinition(
+                        AppPageNames.Common.Constants,
+                        L("Constants"),
+                        url: "App/Constants",
+                        icon: "flaticon-more",
+                        permissionDependency: new SimplePermissionDependency(AppPermissions.Pages_Constants)
+                    )
+                )
+                .AddItem(new MenuItemDefinition(
                     AppPageNames.Host.Tenants,
                     L("Tenants"),
                     url: "App/Tenants",

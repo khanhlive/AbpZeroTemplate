@@ -1,0 +1,48 @@
+﻿
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.Icd10s
+@model Icd10ViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("Details")))
+
+<div class="modal-body">
+    <div id="Icd10InformationsTab">
+        
+        <div class="row">
+            <div class="col-6 mb-3">
+                <h6>@L("Code") :</h6>
+                @Model.Icd10.Code
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Name") :</h6>
+                @Model.Icd10.Name
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("DiseaseChapterCode") :</h6>
+                @Model.Icd10.DiseaseChapterCode
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("DiseaseChapterName") :</h6>
+                @Model.Icd10.DiseaseChapterName
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("WHOeName") :</h6>
+                @Model.Icd10.WHOeName
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("WHOName") :</h6>
+                @Model.Icd10.WHOName
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Status") :</h6>
+                @Model.Icd10.Status
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithClose.cshtml")
+

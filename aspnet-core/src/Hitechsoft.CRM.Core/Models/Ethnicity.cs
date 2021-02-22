@@ -1,11 +1,12 @@
 ﻿using Abp.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Abp.Domain.Entities.Auditing;
 
 namespace Hitechsoft.CRM.Models
 {
     [Table("Ethnicities", Schema = "dic")]
-    public class Ethnicity : Entity, IMayHaveTenant, ISoftDelete
+    public class Ethnicity : Entity, IMayHaveTenant, ISoftDelete 
     {
         public int? TenantId { get; set; }
 
