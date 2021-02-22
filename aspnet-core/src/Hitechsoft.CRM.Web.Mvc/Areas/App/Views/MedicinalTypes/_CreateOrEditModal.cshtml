@@ -1,0 +1,54 @@
+﻿
+@using System.Globalization
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.MedicinalTypes
+@model CreateOrEditMedicinalTypeModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditMedicinalType")) : L("CreateNewMedicinalType")))
+
+<div class="modal-body">
+        <div id="MedicinalTypeInformationsTab">
+            <form name="MedicinalTypeInformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.MedicinalType.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="MedicinalType_Code">@L("Code")</label>
+									<input class="form-control" id="MedicinalType_Code" value="@Model.MedicinalType.Code" type="text" name="code"  required  maxlength="@Hitechsoft.CRM.Models.MedicinalTypeConsts.MaxCodeLength"  minlength="@Hitechsoft.CRM.Models.MedicinalTypeConsts.MinCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicinalType_Name">@L("Name")</label>
+									<input class="form-control" id="MedicinalType_Name" value="@Model.MedicinalType.Name" type="text" name="name"  required  maxlength="@Hitechsoft.CRM.Models.MedicinalTypeConsts.MaxNameLength"  minlength="@Hitechsoft.CRM.Models.MedicinalTypeConsts.MinNameLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicinalType_Description">@L("Description")</label>
+									<input class="form-control" id="MedicinalType_Description" value="@Model.MedicinalType.Description" type="text" name="description"   maxlength="@Hitechsoft.CRM.Models.MedicinalTypeConsts.MaxDescriptionLength"  minlength="@Hitechsoft.CRM.Models.MedicinalTypeConsts.MinDescriptionLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="MedicinalType_Status">@L("Status")</label>
+									<input class="form-control m-input" id="MedicinalType_Status" value="@Model.MedicinalType.Status.ToString(CultureInfo.InvariantCulture)" type="number" name="status"  />
+								</div>
+					
+								<div class="m-checkbox-list">
+									<label for="MedicinalType_IsDeleted" class="kt-checkbox">
+										<input id="MedicinalType_IsDeleted" type="checkbox" name="isDeleted" value="true" @Html.Raw(Model.MedicinalType.IsDeleted ?"checked=\"checked\"":"") />
+										@L("IsDeleted")
+										<span></span>
+									</label>
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

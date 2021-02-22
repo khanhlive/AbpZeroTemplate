@@ -1,0 +1,44 @@
+﻿
+@using System.Globalization
+@using Hitechsoft.CRM.Web.Areas.App.Models.Common.Modals
+@using Hitechsoft.CRM.Web.Areas.App.Models.Gender
+@model CreateOrEditGenderModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditGender")) : L("CreateNewGender")))
+
+<div class="modal-body">
+        <div id="GenderInformationsTab">
+            <form name="GenderInformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.Gender.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="Gender_Code">@L("Code")</label>
+									<input class="form-control" id="Gender_Code" value="@Model.Gender.Code" type="text" name="code"  required  maxlength="@Hitechsoft.CRM.Models.GenderConsts.MaxCodeLength"  minlength="@Hitechsoft.CRM.Models.GenderConsts.MinCodeLength"  />
+								</div>
+					
+								<div class="form-group">
+									<label for="Gender_Name">@L("Name")</label>
+									<input class="form-control" id="Gender_Name" value="@Model.Gender.Name" type="text" name="name"  required  maxlength="@Hitechsoft.CRM.Models.GenderConsts.MaxNameLength"  minlength="@Hitechsoft.CRM.Models.GenderConsts.MinNameLength"  />
+								</div>
+					
+								<div class="m-checkbox-list">
+									<label for="Gender_IsDeleted" class="kt-checkbox">
+										<input id="Gender_IsDeleted" type="checkbox" name="isDeleted" value="true" @Html.Raw(Model.Gender.IsDeleted ?"checked=\"checked\"":"") />
+										@L("IsDeleted")
+										<span></span>
+									</label>
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
