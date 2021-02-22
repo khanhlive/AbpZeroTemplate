@@ -21,7 +21,7 @@
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <abp-page-subheader title="@L("Users")" description="@L("UsersHeaderInfo")">
         <div class="btn-group">
-            <button type="button" class="btn btn-outline-success dropdown-toggle mr-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-outline-success dropdown-toggle mr-1 btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="far fa-file-excel"></i> @L("ExcelOperations")
             </button>
             <div class="dropdown-menu dropdown-menu-right">
@@ -41,7 +41,7 @@
 
         @if (IsGranted(AppPermissions.Pages_Administration_Users_Create))
         {
-            <button id="CreateNewUserButton" class="btn btn-primary">
+            <button id="CreateNewUserButton" class="btn btn-primary btn-sm">
                 <i class="fa fa-plus"></i> @L("CreateNewUser")
             </button>
         }
