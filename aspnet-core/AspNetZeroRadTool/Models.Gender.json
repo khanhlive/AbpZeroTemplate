@@ -6,7 +6,7 @@
   "EntityNamePlural": "Gender",
   "TableName": "Gender",
   "PrimaryKeyType": "int",
-  "BaseClass": "Entity",
+  "BaseClass": "FullAuditedEntity",
   "EntityHistory": false,
   "AutoMigration": true,
   "UpdateDatabase": true,
@@ -50,25 +50,6 @@
         "MaximumValue": 0.0
       },
       "Required": true,
-      "Nullable": false,
-      "Regex": "",
-      "UserInterface": {
-        "AdvancedFilter": false,
-        "List": true,
-        "CreateOrUpdate": true
-      }
-    },
-    {
-      "Name": "IsDeleted",
-      "Type": "bool",
-      "MaxLength": -1,
-      "MinLength": -1,
-      "Range": {
-        "IsRangeSet": false,
-        "MinimumValue": 0.0,
-        "MaximumValue": 0.0
-      },
-      "Required": false,
       "Nullable": false,
       "Regex": "",
       "UserInterface": {

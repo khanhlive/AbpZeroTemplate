@@ -5437,13 +5437,13 @@ a.close.disabled {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.55rem 1.1rem;
+  padding: 0.75rem 1.1rem;
   border-bottom: 1px solid #ebedf3;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px; }
   .modal-header .close {
-    padding: 0.55rem 1.1rem;
-    margin: -0.55rem -1.1rem -0.55rem auto; }
+    padding: 0.75rem 1.1rem;
+    margin: -0.75rem -1.1rem -0.75rem auto; }
 
 .modal-title {
   margin-bottom: 0;
@@ -55829,7 +55829,8 @@ code {
     border-spacing: 0 !important;
     margin: 1rem 0 !important;
     border-radius: 2px; }
-    .dataTables_wrapper .dataTable th, .dataTables_wrapper .dataTable td {
+    .dataTables_wrapper .dataTable th,
+    .dataTables_wrapper .dataTable td {
       font-weight: 400;
       font-size: 1rem;
       vertical-align: middle;
@@ -55840,29 +55841,49 @@ code {
       transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
       outline: none !important;
       padding: 1rem 1rem; }
-      .dataTables_wrapper .dataTable th .checkbox, .dataTables_wrapper .dataTable td .checkbox {
+      .dataTables_wrapper .dataTable th .checkbox,
+      .dataTables_wrapper .dataTable td .checkbox {
         margin: 0;
         right: -2px; }
-      .dataTables_wrapper .dataTable th.dt-center, .dataTables_wrapper .dataTable td.dt-center {
+      .dataTables_wrapper .dataTable th.dt-center,
+      .dataTables_wrapper .dataTable td.dt-center {
         text-align: center; }
-      .dataTables_wrapper .dataTable th.dt-left, .dataTables_wrapper .dataTable td.dt-left {
+      .dataTables_wrapper .dataTable th.dt-left,
+      .dataTables_wrapper .dataTable td.dt-left {
         text-align: left; }
-      .dataTables_wrapper .dataTable th.dt-right, .dataTables_wrapper .dataTable td.dt-right {
+      .dataTables_wrapper .dataTable th.dt-right,
+      .dataTables_wrapper .dataTable td.dt-right {
         text-align: right; }
-      .dataTables_wrapper .dataTable th.sorting:before, .dataTables_wrapper .dataTable th.sorting:after, .dataTables_wrapper .dataTable td.sorting:before, .dataTables_wrapper .dataTable td.sorting:after {
+      .dataTables_wrapper .dataTable th.sorting:before, .dataTables_wrapper .dataTable th.sorting:after,
+      .dataTables_wrapper .dataTable td.sorting:before,
+      .dataTables_wrapper .dataTable td.sorting:after {
         opacity: 0.6; }
-      .dataTables_wrapper .dataTable th.sorting_desc:before, .dataTables_wrapper .dataTable th.sorting_desc:after, .dataTables_wrapper .dataTable th.orting_asc_disabled:before, .dataTables_wrapper .dataTable th.orting_asc_disabled:after, .dataTables_wrapper .dataTable th.orting_desc_disabled:before, .dataTables_wrapper .dataTable th.orting_desc_disabled:after, .dataTables_wrapper .dataTable th.sorting_asc:before, .dataTables_wrapper .dataTable th.sorting_asc:after, .dataTables_wrapper .dataTable th.sorting:before, .dataTables_wrapper .dataTable th.sorting:after, .dataTables_wrapper .dataTable td.sorting_desc:before, .dataTables_wrapper .dataTable td.sorting_desc:after, .dataTables_wrapper .dataTable td.orting_asc_disabled:before, .dataTables_wrapper .dataTable td.orting_asc_disabled:after, .dataTables_wrapper .dataTable td.orting_desc_disabled:before, .dataTables_wrapper .dataTable td.orting_desc_disabled:after, .dataTables_wrapper .dataTable td.sorting_asc:before, .dataTables_wrapper .dataTable td.sorting_asc:after, .dataTables_wrapper .dataTable td.sorting:before, .dataTables_wrapper .dataTable td.sorting:after {
+      .dataTables_wrapper .dataTable th.sorting_desc:before, .dataTables_wrapper .dataTable th.sorting_desc:after, .dataTables_wrapper .dataTable th.orting_asc_disabled:before, .dataTables_wrapper .dataTable th.orting_asc_disabled:after, .dataTables_wrapper .dataTable th.orting_desc_disabled:before, .dataTables_wrapper .dataTable th.orting_desc_disabled:after, .dataTables_wrapper .dataTable th.sorting_asc:before, .dataTables_wrapper .dataTable th.sorting_asc:after, .dataTables_wrapper .dataTable th.sorting:before, .dataTables_wrapper .dataTable th.sorting:after,
+      .dataTables_wrapper .dataTable td.sorting_desc:before,
+      .dataTables_wrapper .dataTable td.sorting_desc:after,
+      .dataTables_wrapper .dataTable td.orting_asc_disabled:before,
+      .dataTables_wrapper .dataTable td.orting_asc_disabled:after,
+      .dataTables_wrapper .dataTable td.orting_desc_disabled:before,
+      .dataTables_wrapper .dataTable td.orting_desc_disabled:after,
+      .dataTables_wrapper .dataTable td.sorting_asc:before,
+      .dataTables_wrapper .dataTable td.sorting_asc:after,
+      .dataTables_wrapper .dataTable td.sorting:before,
+      .dataTables_wrapper .dataTable td.sorting:after {
         top: 50% !important;
         margin-top: -0.75rem;
         bottom: auto !important; }
-      .dataTables_wrapper .dataTable th.sorting_asc, .dataTables_wrapper .dataTable td.sorting_asc {
+      .dataTables_wrapper .dataTable th.sorting_asc,
+      .dataTables_wrapper .dataTable td.sorting_asc {
         color: #3699FF !important; }
-        .dataTables_wrapper .dataTable th.sorting_asc:before, .dataTables_wrapper .dataTable td.sorting_asc:before {
+        .dataTables_wrapper .dataTable th.sorting_asc:before,
+        .dataTables_wrapper .dataTable td.sorting_asc:before {
           opacity: 1;
           color: #3699FF !important; }
-      .dataTables_wrapper .dataTable th.sorting_desc, .dataTables_wrapper .dataTable td.sorting_desc {
+      .dataTables_wrapper .dataTable th.sorting_desc,
+      .dataTables_wrapper .dataTable td.sorting_desc {
         color: #3699FF !important; }
-        .dataTables_wrapper .dataTable th.sorting_desc:after, .dataTables_wrapper .dataTable td.sorting_desc:after {
+        .dataTables_wrapper .dataTable th.sorting_desc:after,
+        .dataTables_wrapper .dataTable td.sorting_desc:after {
           opacity: 1;
           color: #3699FF !important; }
     .dataTables_wrapper .dataTable tfoot th,
@@ -55874,22 +55895,28 @@ code {
     .dataTables_wrapper .dataTable tbody tr.active,
     .dataTables_wrapper .dataTable tbody tr.selected {
       background-color: #ebedf3; }
-      .dataTables_wrapper .dataTable tbody tr.active th, .dataTables_wrapper .dataTable tbody tr.active td,
+      .dataTables_wrapper .dataTable tbody tr.active th,
+      .dataTables_wrapper .dataTable tbody tr.active td,
       .dataTables_wrapper .dataTable tbody tr.selected th,
       .dataTables_wrapper .dataTable tbody tr.selected td {
         background-color: #ebedf3;
         border-left-color: #ebedf3;
         border-right-color: #ebedf3;
         color: #3f4254; }
-    .dataTables_wrapper .dataTable .group th, .dataTables_wrapper .dataTable .group td {
+    .dataTables_wrapper .dataTable .group th,
+    .dataTables_wrapper .dataTable .group td {
       background-color: #f3f6f9; }
-    .dataTables_wrapper .dataTable .filter th, .dataTables_wrapper .dataTable .filter td {
+    .dataTables_wrapper .dataTable .filter th,
+    .dataTables_wrapper .dataTable .filter td {
       vertical-align: top; }
-      .dataTables_wrapper .dataTable .filter th .input-group + .input-group, .dataTables_wrapper .dataTable .filter td .input-group + .input-group {
+      .dataTables_wrapper .dataTable .filter th .input-group + .input-group,
+      .dataTables_wrapper .dataTable .filter td .input-group + .input-group {
         margin-top: 0.5rem; }
-      .dataTables_wrapper .dataTable .filter th .btn + .btn, .dataTables_wrapper .dataTable .filter td .btn + .btn {
+      .dataTables_wrapper .dataTable .filter th .btn + .btn,
+      .dataTables_wrapper .dataTable .filter td .btn + .btn {
         margin-top: 0.5rem; }
-    .dataTables_wrapper .dataTable .group th, .dataTables_wrapper .dataTable .group td {
+    .dataTables_wrapper .dataTable .group th,
+    .dataTables_wrapper .dataTable .group td {
       font-size: 1rem;
       font-weight: 500; }
   .dataTables_wrapper .dataTables_scroll {
@@ -56101,7 +56128,7 @@ code {
         font-weight: 500;
         padding: 0.5rem 2rem 0.5rem 0; }
         .dataTables_wrapper .child .dtr-details > li .dtr-title:after {
-          content: ':'; }
+          content: ":"; }
       .dataTables_wrapper .child .dtr-details > li .dtr-data {
         display: table-cell;
         vertical-align: top;

@@ -3,7 +3,7 @@
 
         var _$ethnicitiesTable = $('#EthnicitiesTable');
         var _ethnicitiesService = abp.services.app.ethnicities;
-		
+
         $('.date-picker').datetimepicker({
             locale: abp.localization.currentLanguage.name,
             format: 'L'
@@ -15,25 +15,25 @@
             'delete': abp.auth.hasPermission('Pages.Administration.Ethnicities.Delete')
         };
 
-         var _createOrEditModal = new app.ModalManager({
+        var _createOrEditModal = new app.ModalManager({
             viewUrl: abp.appPath + 'App/Ethnicities/CreateOrEditModal',
             scriptUrl: abp.appPath + 'view-resources/Areas/App/Views/Ethnicities/_CreateOrEditModal.js',
             modalClass: 'CreateOrEditEthnicityModal'
-        });       
+        });
 
-		 var _viewEthnicityModal = new app.ModalManager({
+        var _viewEthnicityModal = new app.ModalManager({
             viewUrl: abp.appPath + 'App/Ethnicities/ViewethnicityModal',
             modalClass: 'ViewEthnicityModal'
         });
 
-		
-		
+
+
 
         var getDateFilter = function (element) {
             if (element.data("DateTimePicker").date() == null) {
                 return null;
             }
-            return element.data("DateTimePicker").date().format("YYYY-MM-DDT00:00:00Z"); 
+            return element.data("DateTimePicker").date().format("YYYY-MM-DDT00:00:00Z");
         }
 
         var dataTable = _$ethnicitiesTable.DataTable({
@@ -44,13 +44,13 @@
                 ajaxFunction: _ethnicitiesService.getAll,
                 inputFilter: function () {
                     return {
-					filter: $('#EthnicitiesTableFilter').val(),
-					codeFilter: $('#CodeFilterId').val(),
-					nameFilter: $('#NameFilterId').val(),
-					descriptionFilter: $('#DescriptionFilterId').val(),
-					minStatusFilter: $('#MinStatusFilterId').val(),
-					maxStatusFilter: $('#MaxStatusFilterId').val(),
-					isDeletedFilter: $('#IsDeletedFilterId').val()
+                        filter: $('#EthnicitiesTableFilter').val(),
+                        codeFilter: $('#CodeFilterId').val(),
+                        nameFilter: $('#NameFilterId').val(),
+                        descriptionFilter: $('#DescriptionFilterId').val(),
+                        minStatusFilter: $('#MinStatusFilterId').val(),
+                        maxStatusFilter: $('#MaxStatusFilterId').val(),
+                        isDeletedFilter: $('#IsDeletedFilterId').val()
                     };
                 }
             },
@@ -66,64 +66,64 @@
                         cssClass: 'btn btn-brand dropdown-toggle',
                         text: '<i class="fa fa-cog"></i> ' + app.localize('Actions') + ' <span class="caret"></span>',
                         items: [
-						{
+                            {
                                 text: app.localize('View'),
                                 action: function (data) {
                                     _viewEthnicityModal.open({ id: data.record.ethnicity.id });
                                 }
-                        },
-						{
-                            text: app.localize('Edit'),
-                            visible: function () {
-                                return _permissions.edit;
                             },
-                            action: function (data) {
-                            _createOrEditModal.open({ id: data.record.ethnicity.id });                                
-                            }
-                        }, 
-						{
-                            text: app.localize('Delete'),
-                            visible: function () {
-                                return _permissions.delete;
+                            {
+                                text: app.localize('Edit'),
+                                visible: function () {
+                                    return _permissions.edit;
+                                },
+                                action: function (data) {
+                                    _createOrEditModal.open({ id: data.record.ethnicity.id });
+                                }
                             },
-                            action: function (data) {
-                                deleteEthnicity(data.record.ethnicity);
-                            }
-                        }]
+                            {
+                                text: app.localize('Delete'),
+                                visible: function () {
+                                    return _permissions.delete;
+                                },
+                                action: function (data) {
+                                    deleteEthnicity(data.record.ethnicity);
+                                }
+                            }]
                     }
                 },
-					{
-						targets: 1,
-						 data: "ethnicity.code",
-						 name: "code"   
-					},
-					{
-						targets: 2,
-						 data: "ethnicity.name",
-						 name: "name"   
-					},
-					{
-						targets: 3,
-						 data: "ethnicity.description",
-						 name: "description"   
-					},
-					{
-						targets: 4,
-						 data: "ethnicity.status",
-						 name: "status"   
-					},
-					{
-						targets: 5,
-						 data: "ethnicity.isDeleted",
-						 name: "isDeleted"  ,
-						render: function (isDeleted) {
-							if (isDeleted) {
-								return '<div class="text-center"><i class="fa fa-check text-success" title="True"></i></div>';
-							}
-							return '<div class="text-center"><i class="fa fa-times-circle" title="False"></i></div>';
-					}
-			 
-					}
+                {
+                    targets: 1,
+                    data: "ethnicity.code",
+                    name: "code"
+                },
+                {
+                    targets: 2,
+                    data: "ethnicity.name",
+                    name: "name"
+                },
+                {
+                    targets: 3,
+                    data: "ethnicity.description",
+                    name: "description"
+                },
+                {
+                    targets: 4,
+                    data: "ethnicity.status",
+                    name: "status"
+                },
+                //{
+                //    targets: 5,
+                //    data: "ethnicity.isDeleted",
+                //    name: "isDeleted",
+                //    render: function (isDeleted) {
+                //        if (isDeleted) {
+                //            return '<div class="text-center"><i class="fa fa-check text-success" title="True"></i></div>';
+                //        }
+                //        return '<div class="text-center"><i class="fa fa-times-circle" title="False"></i></div>';
+                //    }
+
+                //}
             ]
         });
 
@@ -148,7 +148,7 @@
             );
         }
 
-		$('#ShowAdvancedFiltersSpan').click(function () {
+        $('#ShowAdvancedFiltersSpan').click(function () {
             $('#ShowAdvancedFiltersSpan').hide();
             $('#HideAdvancedFiltersSpan').show();
             $('#AdvacedAuditFiltersArea').slideDown();
@@ -162,19 +162,19 @@
 
         $('#CreateNewEthnicityButton').click(function () {
             _createOrEditModal.open();
-        });        
+        });
 
-		$('#ExportToExcelButton').click(function () {
+        $('#ExportToExcelButton').click(function () {
             _ethnicitiesService
                 .getEthnicitiesToExcel({
-				filter : $('#EthnicitiesTableFilter').val(),
-					codeFilter: $('#CodeFilterId').val(),
-					nameFilter: $('#NameFilterId').val(),
-					descriptionFilter: $('#DescriptionFilterId').val(),
-					minStatusFilter: $('#MinStatusFilterId').val(),
-					maxStatusFilter: $('#MaxStatusFilterId').val(),
-					isDeletedFilter: $('#IsDeletedFilterId').val()
-				})
+                    filter: $('#EthnicitiesTableFilter').val(),
+                    codeFilter: $('#CodeFilterId').val(),
+                    nameFilter: $('#NameFilterId').val(),
+                    descriptionFilter: $('#DescriptionFilterId').val(),
+                    minStatusFilter: $('#MinStatusFilterId').val(),
+                    maxStatusFilter: $('#MaxStatusFilterId').val(),
+                    isDeletedFilter: $('#IsDeletedFilterId').val()
+                })
                 .done(function (result) {
                     app.downloadTempFile(result);
                 });
@@ -184,15 +184,15 @@
             getEthnicities();
         });
 
-		$('#GetEthnicitiesButton').click(function (e) {
+        $('#GetEthnicitiesButton').click(function (e) {
             e.preventDefault();
             getEthnicities();
         });
 
-		$(document).keypress(function(e) {
-		  if(e.which === 13) {
-			getEthnicities();
-		  }
-		});
+        $(document).keypress(function (e) {
+            if (e.which === 13) {
+                getEthnicities();
+            }
+        });
     });
 })();

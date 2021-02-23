@@ -7,48 +7,36 @@
 @await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditEthnicity")) : L("CreateNewEthnicity")))
 
 <div class="modal-body">
-        <div id="EthnicityInformationsTab">
-            <form name="EthnicityInformationsForm" role="form" novalidate class="form-validation">
+    <div id="EthnicityInformationsTab">
+        <form name="EthnicityInformationsForm" role="form" novalidate class="form-validation">
 
-                @if (Model.IsEditMode)
-                {
-                    <input type="hidden" name="id" value="@Model.Ethnicity.Id" />
-                }
+            @if (Model.IsEditMode)
+            {
+                <input type="hidden" name="id" value="@Model.Ethnicity.Id" />
+            }
 
-				
+            <div class="form-group">
+                <label for="Ethnicity_Code">@L("Code")</label>
+                <input class="form-control" id="Ethnicity_Code" value="@Model.Ethnicity.Code" type="text" name="code" required maxlength="@Hitechsoft.CRM.Models.EthnicityConsts.MaxCodeLength" minlength="@Hitechsoft.CRM.Models.EthnicityConsts.MinCodeLength" />
+            </div>
 
-				
-								<div class="form-group">
-									<label for="Ethnicity_Code">@L("Code")</label>
-									<input class="form-control" id="Ethnicity_Code" value="@Model.Ethnicity.Code" type="text" name="code"  required  maxlength="@Hitechsoft.CRM.Models.EthnicityConsts.MaxCodeLength"  minlength="@Hitechsoft.CRM.Models.EthnicityConsts.MinCodeLength"  />
-								</div>
-					
-								<div class="form-group">
-									<label for="Ethnicity_Name">@L("Name")</label>
-									<input class="form-control" id="Ethnicity_Name" value="@Model.Ethnicity.Name" type="text" name="name"  required  maxlength="@Hitechsoft.CRM.Models.EthnicityConsts.MaxNameLength"  minlength="@Hitechsoft.CRM.Models.EthnicityConsts.MinNameLength"  />
-								</div>
-					
-								<div class="form-group">
-									<label for="Ethnicity_Description">@L("Description")</label>
-									<input class="form-control" id="Ethnicity_Description" value="@Model.Ethnicity.Description" type="text" name="description"   maxlength="@Hitechsoft.CRM.Models.EthnicityConsts.MaxDescriptionLength"  minlength="@Hitechsoft.CRM.Models.EthnicityConsts.MinDescriptionLength"  />
-								</div>
-					
-								<div class="form-group">
-									<label for="Ethnicity_Status">@L("Status")</label>
-									<input class="form-control m-input" id="Ethnicity_Status" value="@Model.Ethnicity.Status?.ToString(CultureInfo.InvariantCulture)" type="number" name="status"  />
-								</div>
-					
-								<div class="m-checkbox-list">
-									<label for="Ethnicity_IsDeleted" class="kt-checkbox">
-										<input id="Ethnicity_IsDeleted" type="checkbox" name="isDeleted" value="true" @Html.Raw(Model.Ethnicity.IsDeleted ?"checked=\"checked\"":"") />
-										@L("IsDeleted")
-										<span></span>
-									</label>
-								</div>
-					
+            <div class="form-group">
+                <label for="Ethnicity_Name">@L("Name")</label>
+                <input class="form-control" id="Ethnicity_Name" value="@Model.Ethnicity.Name" type="text" name="name" required maxlength="@Hitechsoft.CRM.Models.EthnicityConsts.MaxNameLength" minlength="@Hitechsoft.CRM.Models.EthnicityConsts.MinNameLength" />
+            </div>
 
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="Ethnicity_Description">@L("Description")</label>
+                <input class="form-control" id="Ethnicity_Description" value="@Model.Ethnicity.Description" type="text" name="description" maxlength="@Hitechsoft.CRM.Models.EthnicityConsts.MaxDescriptionLength" minlength="@Hitechsoft.CRM.Models.EthnicityConsts.MinDescriptionLength" />
+            </div>
+
+            <div class="form-group">
+                <label for="Ethnicity_Status">@L("Status")</label>
+                <input class="form-control m-input" id="Ethnicity_Status" value="@Model.Ethnicity.Status?.ToString(CultureInfo.InvariantCulture)" type="number" name="status" />
+            </div>
+            
+        </form>
+    </div>
 </div>
 
 @await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

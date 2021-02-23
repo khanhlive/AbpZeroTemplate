@@ -510,7 +510,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px // custom breakpoint,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  xxl: 1400px // custom breakpoint,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ) !default;
 
 // Grid containers
@@ -779,7 +779,7 @@ $modal-header-border-color: $border-color !default;
 $modal-footer-border-color: $border-color !default;
 $modal-header-border-width: 1px !default;
 $modal-footer-border-width: 1px !default;
-$modal-header-padding-y: 0.55rem !default;
+$modal-header-padding-y: 0.75rem !default;
 $modal-header-padding-x: 1.1rem !default;
 $modal-header-padding: $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
 
